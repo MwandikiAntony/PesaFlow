@@ -1,14 +1,16 @@
-import AppNavigator from "./src/navigation/AppNavigator";
-import { useEffect } from "react";
-import { syncOfflineExpenses } from "./src/utils/offline";
-
-
-
+import React, { useEffect } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AppNavigator from './src/navigation/AppNavigator';
+import { syncOfflineExpenses } from './src/utils/offline';
 
 export default function App() {
   useEffect(() => {
-  syncOfflineExpenses();
-}, []);
-  return <AppNavigator />;
+    syncOfflineExpenses();
+  }, []);
 
+  return (
+    <SafeAreaProvider>
+      <AppNavigator />
+    </SafeAreaProvider>
+  );
 }
