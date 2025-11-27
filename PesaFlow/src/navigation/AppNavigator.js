@@ -1,12 +1,12 @@
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
-import HomeScreen from "../screens/HomeScreen";
+import TabNavigator from "./TabNavigator";
 import AddExpenseScreen from "../screens/AddExpenseScreen";
-import BillsScreen from "../screens/BillsScreen";
-import TokensScreen from "../screens/TokensScreen";
-import MpesaCalcScreen from "../screens/MpesaCalcScreen";
+import ExpenseDetailScreen from "../screens/ExpenseDetailScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,11 +16,9 @@ export default function AppNavigator() {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Main" component={TabNavigator} />
         <Stack.Screen name="AddExpense" component={AddExpenseScreen} />
-        <Stack.Screen name="Bills" component={BillsScreen} />
-        <Stack.Screen name="Tokens" component={TokensScreen} />
-        <Stack.Screen name="MpesaCalc" component={MpesaCalcScreen} />
+        <Stack.Screen name="ExpenseDetail" component={ExpenseDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
