@@ -6,7 +6,7 @@ import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import TabNavigator from "./TabNavigator";
 import AddExpenseScreen from "../screens/AddExpenseScreen";
-import ExpenseDetailScreen from "../screens/ExpenseDetailScreen";
+import ExpenseDetailScreen from "../screens/ExpenseScreen";
 
 const Stack = createNativeStackNavigator();
 

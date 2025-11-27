@@ -1,7 +1,9 @@
 export default {
-  primary: "#00A752",      // Safaricom Green
-  secondary: "#003399",    // Kenya Power Blue
-  accent: "#FFCC00",       // Kenya Power Yellow
-  background: "#F2F2F2",
-  text: "#1A1A1A"
+  primary: "#00A752",       // Safaricom Green
+  secondary: "#1E90FF",     // Kenya Power Blue
+  accent: "#FFD700",        // Gold / Highlight
+  background: "#F5F5F5",    // Light grey background
+  text: "#333",             // Standard text
+  white: "#fff",
+  danger: "#FF4C4C",        // Errors / alerts
 };
