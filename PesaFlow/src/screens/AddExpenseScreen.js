@@ -10,6 +10,7 @@ import {
 import colors from "../theme/colors";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { saveExpenseOffline, syncOfflineExpenses } from "../utils/offline";
 
 export default function AddExpenseScreen({ navigation }) {
   const [amount, setAmount] = useState("");
@@ -34,6 +35,28 @@ export default function AddExpenseScreen({ navigation }) {
       alert("Error saving expense");
     }
   };
+
+
+
+const saveExpense = async () => {
+  if (!amount || !category) return alert("Amount and category required");
+
+  const expense = { amount, category, note };
+
+  // Save locally first
+  await saveExpenseOffline(expense);
+
+  // Try syncing to backend
+  try {
+    await api.post("/expense", expense);
+    alert("Expense saved!");
+  } catch (err) {
+    console.log("Will sync later:", err);
+    alert("Expense saved offline! Will sync when online.");
+  }
+
+  navigation.goBack();
+};
 
   return (
     <ScrollView style={styles.container}>
