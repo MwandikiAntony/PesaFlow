@@ -17,27 +17,6 @@ export default function AddExpenseScreen({ navigation }) {
   const [category, setCategory] = useState("");
   const [note, setNote] = useState("");
 
-  const saveExpense = async () => {
-    if (!amount || !category) return alert("Amount and category required");
-
-    const token = await AsyncStorage.getItem("token");
-
-    try {
-      await axios.post(
-        "http://YOUR_BACKEND_URL/api/expense",
-        { amount, category, note },
-        { headers: { Authorization: token } }
-      );
-
-      alert("Expense saved!");
-      navigation.goBack();
-    } catch (err) {
-      alert("Error saving expense");
-    }
-  };
-
-
-
 const saveExpense = async () => {
   if (!amount || !category) return alert("Amount and category required");
 
