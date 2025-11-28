@@ -11,6 +11,7 @@ import colors from "../theme/colors";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { saveExpenseOffline, syncOfflineExpenses } from "../utils/offline";
+import api from "../api/api";
 
 export default function AddExpenseScreen({ navigation }) {
   const [amount, setAmount] = useState("");

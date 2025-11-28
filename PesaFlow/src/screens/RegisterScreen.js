@@ -21,7 +21,7 @@ export default function RegisterScreen({ navigation }) {
       return alert("All fields are required");
 
     try {
-      await axios.post("http://YOUR_BACKEND_URL/api/auth/register", {
+      await axios.post("http://localhost:5000/api/auth/register", {
         name,
         email,
         password,

@@ -31,7 +31,7 @@ export default function HomeScreen({ navigation }) {
         <Text style={styles.cardDesc}>Track meter usage & reminders</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.card, { borderLeftColor: colors.accent }]} onPress={() => navigation.navigate("MpesaCalc")}>
+      <TouchableOpacity style={[styles.card, { borderLeftColor: colors.accent }]} onPress={() => navigation.navigate("MpesaCalcScreen")}>
         <Text style={styles.cardTitle}>M-Pesa Calculator</Text>
         <Text style={styles.cardDesc}>Check sending, paybill & withdraw fees</Text>
       </TouchableOpacity>
